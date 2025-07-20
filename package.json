@@ -3,15 +3,17 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "dev": "next dev --turbopack",
         "build": "next build",
-        "start": "next start",
-        "lint": "next lint",
+        "codegen": "graphql-codegen --config graphql.config.ts",
+        "dev": "next dev --turbopack",
         "format": "biome format --write",
-        "postinstall": "flowbite-react patch"
+        "lint": "next lint",
+        "postinstall": "flowbite-react patch",
+        "start": "next start"
     },
     "dependencies": {
         "flowbite-react": "0.11.9",
+        "graphql": "16.11.0",
         "next": "15.4.1",
         "react": "19.1.0",
         "react-dom": "19.1.0",
@@ -19,10 +21,16 @@
     },
     "devDependencies": {
         "@biomejs/biome": "2.1.1",
+        "@graphql-codegen/cli": "5.0.7",
+        "@graphql-codegen/client-preset": "4.8.3",
+        "@graphql-codegen/typescript": "4.1.6",
+        "@graphql-codegen/typescript-generic-sdk": "4.0.2",
+        "@graphql-codegen/typescript-operations": "4.6.1",
         "@tailwindcss/postcss": "^4",
         "@types/node": "^20",
         "@types/react": "^19",
         "@types/react-dom": "^19",
+        "graphql-tag": "2.12.6",
         "tailwindcss": "^4",
         "typescript": "^5"
     }
