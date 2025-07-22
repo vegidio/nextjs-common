@@ -7,7 +7,6 @@ export const categories = gql`
             name
             slug
             description
-            createdAt
         }
     }
 `;

@@ -1,19 +1,21 @@
-'use client';
-
 import { Sidebar, SidebarItemGroup, SidebarItems } from 'flowbite-react';
 import { HiViewBoards } from 'react-icons/hi';
 import { CategoryItem } from '@/components/home/CategoryItem';
+import { getCategories } from '@/lib/graphql';
 
-export const CategoriesMenu = () => {
+export const CategoriesMenu = async () => {
+    const categories = await getCategories();
+    categories.sort((a, b) => a.name.localeCompare(b.name));
+
     return (
         <Sidebar>
             <SidebarItems>
                 <h2 className="dark:text-white">Categories</h2>
 
                 <SidebarItemGroup>
-                    <CategoryItem icon={<HiViewBoards />} text="Food" />
-                    <CategoryItem icon={<HiViewBoards />} text="Nature" />
-                    <CategoryItem icon={<HiViewBoards />} text="Tech" />
+                    {categories.map((category) => (
+                        <CategoryItem key={category.id} icon={<HiViewBoards />} text={category.name} />
+                    ))}
                 </SidebarItemGroup>
             </SidebarItems>
         </Sidebar>

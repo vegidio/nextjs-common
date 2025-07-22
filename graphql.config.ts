@@ -12,6 +12,13 @@ const config: CodegenConfig = {
             plugins: ['typescript', 'typescript-operations', 'typescript-generic-sdk'],
             config: { ...typeConfig },
         },
+        'graphql/schema.graphql': {
+            plugins: ['schema-ast'],
+            config: {
+                includeDirectives: true,
+                ...typeConfig,
+            },
+        },
     },
 };
 
