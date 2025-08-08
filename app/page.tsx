@@ -1,4 +1,4 @@
-import { CategoriesMenu } from '@/components/home';
+import { ArticleList, CategoriesMenu } from '@/components/root';
 
 export default function Home() {
     return (
@@ -7,8 +7,8 @@ export default function Home() {
                 <CategoriesMenu />
             </section>
 
-            <section className="bg-pink-400 grow">
-                <h1>Articles</h1>
+            <section className=" grow">
+                <ArticleList />
             </section>
         </main>
     );

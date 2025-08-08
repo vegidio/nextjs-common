@@ -1,6 +1,6 @@
 import { Sidebar, SidebarItemGroup, SidebarItems } from 'flowbite-react';
 import { HiViewBoards } from 'react-icons/hi';
-import { CategoryItem } from '@/components/home/CategoryItem';
+import { CategoryItem } from './CategoryItem';
 import { getCategories } from '@/lib/graphql';
 
 export const CategoriesMenu = async () => {
