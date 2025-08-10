@@ -4,18 +4,21 @@
     "private": true,
     "scripts": {
         "build": "next build",
-        "codegen": "graphql-codegen --config graphql.config.ts",
+        "codegen:graphql": "graphql-codegen --config graphql.config.ts",
+        "codegen:openapi": "openapi-typescript openapi/full_documentation.json -o openapi/generated.ts",
         "dev": "next dev --turbopack",
         "format": "biome format --write",
         "lint": "next lint",
         "postinstall": "flowbite-react patch",
-        "start": "next start"
+        "start": "next start",
+        "typecheck": "tsc --noEmit"
     },
     "dependencies": {
         "date-fns": "4.1.0",
         "flowbite-react": "0.11.9",
         "graphql": "16.11.0",
         "next": "15.4.1",
+        "openapi-fetch": "0.14.0",
         "react": "19.1.0",
         "react-dom": "19.1.0",
         "react-icons": "5.5.0",
@@ -28,12 +31,12 @@
         "@graphql-codegen/typescript": "4.1.6",
         "@graphql-codegen/typescript-generic-sdk": "4.0.2",
         "@graphql-codegen/typescript-operations": "4.6.1",
-        "@openapitools/openapi-generator-cli": "2.21.4",
         "@tailwindcss/postcss": "^4",
         "@types/node": "^20",
         "@types/react": "^19",
         "@types/react-dom": "^19",
         "graphql-tag": "2.12.6",
+        "openapi-typescript": "7.8.0",
         "tailwindcss": "^4",
         "typescript": "^5"
     }

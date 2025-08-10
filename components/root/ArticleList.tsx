@@ -1,9 +1,9 @@
 import { List } from 'flowbite-react';
 import { ArticleItem } from './ArticleItem';
-import { getArticles } from '@/lib/graphql/getArticles';
+import { api } from '@/lib/api';
 
 export const ArticleList = async () => {
-    const articles = await getArticles();
+    const articles = await api.getArticles();
     articles.sort((a, b) => a.createdAt.getTime() - b.createdAt.getTime());
 
     return (

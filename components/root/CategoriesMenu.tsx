@@ -1,10 +1,10 @@
 import { Sidebar, SidebarItemGroup, SidebarItems } from 'flowbite-react';
 import { HiViewBoards } from 'react-icons/hi';
 import { CategoryItem } from './CategoryItem';
-import { getCategories } from '@/lib/graphql';
+import { api } from '@/lib/api';
 
 export const CategoriesMenu = async () => {
-    const categories = await getCategories();
+    const categories = await api.getCategories();
     categories.sort((a, b) => a.name.localeCompare(b.name));
 
     return (

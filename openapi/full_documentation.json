@@ -1047,6 +1047,17 @@
                 },
                 "summary": "",
                 "tags": ["Upload - File"],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "File id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
                 "requestBody": {
                     "description": "Upload files",
                     "required": true,
@@ -1078,70 +1089,6 @@
                                             "type": "string",
                                             "format": "binary"
                                         }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/upload?id={id}": {
-            "post": {
-                "parameters": [
-                    {
-                        "name": "id",
-                        "in": "query",
-                        "description": "File id",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    }
-                ],
-                "description": "Upload file information",
-                "responses": {
-                    "200": {
-                        "description": "response",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/components/schemas/UploadFile"
-                                    }
-                                }
-                            }
-                        }
-                    }
-                },
-                "summary": "",
-                "tags": ["Upload - File"],
-                "requestBody": {
-                    "description": "Upload files",
-                    "required": true,
-                    "content": {
-                        "multipart/form-data": {
-                            "schema": {
-                                "type": "object",
-                                "properties": {
-                                    "fileInfo": {
-                                        "type": "object",
-                                        "properties": {
-                                            "name": {
-                                                "type": "string"
-                                            },
-                                            "alternativeText": {
-                                                "type": "string"
-                                            },
-                                            "caption": {
-                                                "type": "string"
-                                            }
-                                        }
-                                    },
-                                    "files": {
-                                        "type": "string",
-                                        "format": "binary"
                                     }
                                 }
                             }

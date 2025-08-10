@@ -1,10 +1,12 @@
 import { type DocumentNode, print } from 'graphql';
-import { getSdk, type Requester } from '@/graphql/graphql';
+import { getSdk, type Requester } from '@/graphql/generated';
 
-const fetcher: Requester<RequestInit> = async <R, V>(
+type FetcherOptions = Pick<RequestInit, 'cache' | 'next'>;
+
+const fetcher: Requester<FetcherOptions> = async <R, V>(
     doc: DocumentNode,
     variables?: V,
-    options?: RequestInit,
+    options?: FetcherOptions,
 ): Promise<R> => {
     const query = print(doc);
     const res = await fetch('https://clever-fish-045791bdd9.strapiapp.com/graphql', {
