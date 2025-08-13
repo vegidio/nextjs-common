@@ -9,7 +9,7 @@ export const ArticleList = async () => {
     return (
         <List ordered unstyled className="max-w-4xl mx-auto">
             {articles.map((article) => (
-                <ArticleItem key={article.id} title={article.title} image={article.image} body={article.body} />
+                <ArticleItem key={article.id} article={article} />
             ))}
         </List>
     );

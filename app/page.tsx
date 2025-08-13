@@ -7,7 +7,7 @@ export default function Home() {
                 <CategoriesMenu />
             </section>
 
-            <section className=" grow">
+            <section className="grow">
                 <ArticleList />
             </section>
         </main>

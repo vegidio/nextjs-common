@@ -1,7 +1,7 @@
 import { Footer, FooterCopyright } from 'flowbite-react';
 import { BsDribbble, BsGithub } from 'react-icons/bs';
 
-export const RootFooter = () => {
+export const PageFooter = () => {
     return (
         <Footer container>
             <div className="w-full sm:flex sm:items-center sm:justify-between">

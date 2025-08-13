@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import { ThemeModeScript } from 'flowbite-react';
-import { RootFooter, RootHeader } from '@/components';
+import { PageFooter, PageHeader } from '@/components/root';
 import './globals.css';
 
 const geistSans = Geist({
@@ -31,9 +31,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 id="root-layout"
                 className={`${geistSans.variable} ${geistMono.variable} antialiased max-w-[90rem] mx-auto mt-3 dark:bg-gray-900`}
             >
-                <RootHeader />
+                <PageHeader />
                 {children}
-                <RootFooter />
+                <PageFooter />
             </body>
         </html>
     );

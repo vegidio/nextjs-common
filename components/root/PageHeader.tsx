@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { DarkThemeToggle, Navbar, NavbarBrand, NavbarCollapse, NavbarLink, NavbarToggle } from 'flowbite-react';
 import { LuNotebookPen } from 'react-icons/lu';
 
-export const RootHeader = () => {
+export const PageHeader = () => {
     return (
         <Navbar fluid rounded>
             <NavbarBrand className="gap-2" as={Link} href="/">
@@ -15,7 +15,7 @@ export const RootHeader = () => {
             <NavbarToggle />
 
             <NavbarCollapse className="items-center">
-                <NavbarLink href="/" active>
+                <NavbarLink as={Link} href="/" active>
                     Home
                 </NavbarLink>
                 <NavbarLink as={Link} href="#">
